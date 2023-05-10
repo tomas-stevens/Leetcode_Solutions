@@ -1,0 +1,15 @@
+public class Solution {
+    public bool IsPalindrome(int x) {
+        string Value = x.ToString();
+        if(Value.Length <=1){
+            return true;
+        }
+        for(int i=0;i<(Value.Length/2);i++)
+        {
+        if(Value[i]!=Value[Value.Length-i-1])
+            {return false;}
+        }
+        return true;
+
+    }
+}
