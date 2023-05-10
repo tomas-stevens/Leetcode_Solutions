@@ -1,0 +1,33 @@
+public class Solution {
+    public int[] TwoSum(int[] nums, int target) {
+                //Dictionary<number,index>
+        Dictionary<int,int> Dictionary = new Dictionary<int,int>();  
+		 int[] Result = new int[2];
+		for(int i =0; i< nums.Length; i++){
+		
+			int Remaining_Value = target - nums[i];
+			
+            if(Dictionary.ContainsKey(Remaining_Value))
+            {
+                int index1= Dictionary[Remaining_Value];
+                int index2 = i;
+                
+                Result[0]=index1;
+                Result[1]=index2;
+                
+                return Result;
+            }
+            else{
+
+                if(Dictionary.ContainsKey(nums[i])==false)
+                {
+                    Dictionary.Add(nums[i],i);    
+                }                
+            }
+		
+
+		}
+		    return Result;
+		
+    }
+}
