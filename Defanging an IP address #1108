@@ -1,0 +1,23 @@
+class Solution {
+public:
+    string defangIPaddr(string address) {
+        string solution;
+        int size = address.length();
+        char array[size + 1];           // to array process
+        strcpy(array, address.c_str());
+        //solution
+        
+        
+        
+        
+        //to string
+        for (int i = 0; i < size; i++) {
+        if (array[i] != '.')
+         solution = solution + array[i]; 
+        else
+            solution = solution + '[' + array[i] + ']';
+            
+        }
+        return solution;
+    }
+};
