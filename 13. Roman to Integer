@@ -1,0 +1,28 @@
+public class Solution {
+    private readonly Dictionary<char, int> Dictionary = new Dictionary<char, int>{{'I',1},{'V',5},{'X',10},{'L',50},{'C',100},{'D',500},{'M',1000}};
+	
+
+    public int RomanToInt(string s) {
+        char[] char_arr = s.ToCharArray();
+    
+        int Result = 0;
+        int Value;
+		int nextValue;
+            
+        for(int i = 0; i <char_arr.Length ; i++){
+            Value = Dictionary[char_arr[i]];
+            
+            if(i != char_arr.Length-1)
+            {
+                nextValue = Dictionary[char_arr[i+1]];
+                
+                if(nextValue>Value){
+                    Value = nextValue-Value;
+                    i = i+1;
+                }
+            }
+             Result = Result + Value;
+        }
+        return Result;
+    }
+}
