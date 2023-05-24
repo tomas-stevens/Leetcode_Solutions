@@ -1,0 +1,35 @@
+//-----------------------------------------------------------------------------
+// Runtime: 99ms
+// Memory Usage: 39.4 MB
+// Language: C#
+//-----------------------------------------------------------------------------
+
+
+public class Solution {
+    public string LongestCommonPrefix(string[] strs) {
+        if(strs.Length == 0){
+            return "";}
+        var index = 0;
+        var PrefixString = strs[0];
+        bool SamePrefix = true;
+
+            for(index = 0; index < PrefixString.Length; index++)
+            {
+                for(int var1 = 1; var1 < strs.Length; var1++)
+                {
+                    if(strs[var1].Length <= index || strs[var1][index] != PrefixString[index])
+                    {
+                        SamePrefix = false;
+                        break;
+
+                    }
+                }
+
+                if(!SamePrefix)
+                    break;
+            }
+
+
+        return PrefixString.Substring(0, index);
+    }
+}
