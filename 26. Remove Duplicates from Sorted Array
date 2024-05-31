@@ -1,0 +1,16 @@
+public class Solution {
+    public int RemoveDuplicates(int[] nums) 
+    {
+        int result = 0;
+        int currentNumber = int.MinValue;
+
+        foreach(int indexNumber in nums){
+            if(currentNumber != indexNumber){
+                result++;
+                nums[result - 1] = indexNumber;
+            }
+            currentNumber = indexNumber;
+        }
+        return result;
+    }
+}
