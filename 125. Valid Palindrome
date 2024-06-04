@@ -1,0 +1,14 @@
+using System.Text.RegularExpressions;
+public class Solution {
+    public bool IsPalindrome(string originalString) {
+        Regex regex = new Regex(@"[^0-9a-zA-Z]+");
+        originalString = regex.Replace(originalString, "");
+
+        var reverse = new string(originalString.Reverse().ToArray());
+        if (reverse.ToLower() == originalString.ToLower())
+        {
+            return true;
+        }
+        return false;
+    }
+}
