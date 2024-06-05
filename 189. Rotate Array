@@ -1,0 +1,23 @@
+public class Solution {
+    public void Rotate(int[] nums, int k)
+    {
+        if( nums != null && nums.Length >0 && k >0){
+            k = k % nums.Length;
+
+            Array.Reverse(nums);
+
+            SubRotate(nums, 0, k -1);
+            SubRotate(nums,k, nums.Length - 1);
+        }
+
+    }
+    public void SubRotate(int[] nums, int start, int end)
+    {
+        while(start < end)
+        {
+            int temp = nums[start]; nums[start] = nums[end]; nums[end] = temp;
+            start++;
+            end--;
+        }
+    }
+}
