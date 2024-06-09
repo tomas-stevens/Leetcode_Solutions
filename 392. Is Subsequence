@@ -1,0 +1,14 @@
+public class Solution {
+    public bool IsSubsequence(string s, string t)
+    {
+        int subStringIndex = 0, stringIndex = 0;
+
+        while (subStringIndex < s.Length && stringIndex < t.Length)
+        {
+            if (s[subStringIndex] == t[stringIndex]) subStringIndex++;
+            stringIndex++;
+        }
+
+        return subStringIndex == s.Length;
+    }
+}
