@@ -1,0 +1,18 @@
+public class Solution {
+    public int StrStr(string haystack, string needle) {
+             return haystack.IndexOf(needle);
+
+    }
+#################################################################################################################
+None library option
+#################################################################################################################1
+    public int StrStr(string haystack, string needle) {
+        if (needle.Length < 1)
+            return -1;
+        for (int i=0; i < haystack.Length - needle.Length + 1; i++)
+                for (int j = 0; j < needle.Length && i+j < haystack.Length && needle[j] == haystack[i+j]; j++)
+                    if (j == needle.Length-1)
+                        return i;
+        return -1;
+    }
+}
